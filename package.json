@@ -1,0 +1,35 @@
+{
+  "name": "johny",
+  "version": "0.0.1",
+  "description": "Johny is simple utility helping you to work with colors",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olo2552/johny.git"
+  },
+  "keywords": [
+    "colors",
+    "NodeJS",
+    "Electron",
+    "utility",
+    "ES6",
+    "functional"
+  ],
+  "author": "Aleksander Wielgorski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olo2552/johny/issues"
+  },
+  "homepage": "https://github.com/olo2552/johny#readme",
+  "dependencies": {
+    "hex-rgb": "^3.0.0",
+    "rgb-to-hex": "0.0.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
+  }
+}
