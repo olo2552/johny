@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/olo2552/johny/issues"
   },
-  "homepage": "https://github.com/olo2552/johny#readme"
+  "homepage": "https://github.com/olo2552/johny#readme",
+  "dependencies": {
+    "hex-rgb": "^3.0.0",
+    "rgb-to-hex": "0.0.0"
+  }
 }
