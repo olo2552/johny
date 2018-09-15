@@ -1,10 +1,10 @@
-export interface ColorWithDifference {
-    color: string;
-    difference: number;
+export interface IColorWithDifference {
+  color: string;
+  difference: number;
 }
 
-export interface Rgb {
-    r: number;
-    g: number;
-    b: number;
+export interface IRgb {
+  r: number;
+  g: number;
+  b: number;
 }

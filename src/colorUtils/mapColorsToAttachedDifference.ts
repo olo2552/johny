@@ -1,11 +1,14 @@
+import { IColorWithDifference } from "../interfaces";
 import { differentiateRgb } from "./differentiateRgb";
-import { ColorWithDifference } from "../interfaces";
 
-function mapColorsToAttachedDifference (queryColor: string, colors: Array<string>): Array<ColorWithDifference> {
-    return colors.map(color => ({
-        color,
-        difference: differentiateRgb(queryColor, color),
-    }));
+function mapColorsToAttachedDifference(
+  queryColor: string,
+  colors: string[]
+): IColorWithDifference[] {
+  return colors.map(color => ({
+    color,
+    difference: differentiateRgb(queryColor, color)
+  }));
 }
 
 export { mapColorsToAttachedDifference };
