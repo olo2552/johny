@@ -2,9 +2,10 @@
   "name": "johny",
   "version": "0.0.1",
   "description": "Johny is simple utility helping you to work with colors",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "watch": "nodemon ./index.js"
+    "watch-compile": "tsc --watch",
+    "watch-js": "nodemon ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,11 @@
     "rgb-to-hex": "0.0.0"
   },
   "devDependencies": {
+    "@types/color": "^3.0.0",
+    "@types/node": "^10.9.4",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "tslib": "^1.9.3",
+    "typescript": "^3.0.3"
   }
 }
