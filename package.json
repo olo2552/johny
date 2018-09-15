@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "lint": "tslint --force --project tsconfig.json",
-    "lint-fix": "prettier --write 'src/**/*'",
+    "lint-fix": "prettier --write 'src/**/*' && tslint --fix --force --project tsconfig.json",
     "watch-compile": "tsc --watch",
     "watch-js": "nodemon ./build/index.js"
   },
