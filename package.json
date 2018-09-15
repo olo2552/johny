@@ -2,7 +2,7 @@
   "name": "johny",
   "version": "0.0.1",
   "description": "Johny is simple utility helping you to work with colors",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "watch": "nodemon ./index.js"
   },
