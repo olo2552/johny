@@ -4,6 +4,8 @@
   "description": "Johny is simple utility helping you to work with colors",
   "main": "src/index.ts",
   "scripts": {
+    "lint": "tslint --force --project tsconfig.json",
+    "lint-fix": "prettier --write 'src/**/*'",
     "watch-compile": "tsc --watch",
     "watch-js": "nodemon ./build/index.js"
   },
