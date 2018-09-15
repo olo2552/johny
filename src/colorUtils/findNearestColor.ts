@@ -1,5 +1,5 @@
 import { ColorWithDifference } from "../interfaces";
-import { mapColorsToAttachedDifference } from './mapColorsToDifference';
+import { mapColorsToAttachedDifference } from './mapColorsToAttachedDifference';
 
 function findNearestColor (queryColor: string, colors: Array<string>): ColorWithDifference {
     return mapColorsToAttachedDifference(queryColor, colors)
