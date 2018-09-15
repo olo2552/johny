@@ -1,6 +1,7 @@
-const buildColorMapFromSASS = sassStreamFilePath => (
-    sassStreamFilePath.split('\n')
+const buildColorMapFromSass = sassStreamFilePath => (
+    sassStreamFilePath
         .trim()
+        .split('\n')
         .filter(line => line.includes('#'))
         .map(line => line.split(':'))
         .map(line => line.map(line => line.trim()))
@@ -12,6 +13,6 @@ const buildColorMapFromSASS = sassStreamFilePath => (
         }), {})
 );
 
-
-
-export { buildColorMapFromSASS };
+module.exports = {
+    buildColorMapFromSass
+};
