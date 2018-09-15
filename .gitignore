@@ -62,3 +62,6 @@ typings/
 
 # JetBrains IDEs
 .idea
+
+# TypeScript build files
+build
