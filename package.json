@@ -4,6 +4,8 @@
   "description": "Johny is simple utility helping you to work with colors",
   "main": "src/index.ts",
   "scripts": {
+    "test": "jest --watch --config jest.config.js",
+    "test-coverage": "jest --coverage",
     "lint": "tslint --force --project tsconfig.json",
     "lint-fix": "prettier --write 'src/**/*' && tslint --fix --force --project tsconfig.json",
     "watch-compile": "tsc --watch",
@@ -34,10 +36,12 @@
   },
   "devDependencies": {
     "@types/color": "^3.0.0",
+    "@types/jest": "^23.3.2",
     "@types/node": "^10.9.4",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.2",
+    "ts-jest": "^23.10.0-beta.6",
     "tslib": "^1.9.3",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
