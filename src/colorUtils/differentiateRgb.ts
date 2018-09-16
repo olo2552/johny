@@ -9,8 +9,8 @@ const RGB_COLOR_WEIGHT: IRgb = {
 };
 
 function differentiateRgb(hex1: string, hex2: string): number {
-  const rgb1 = color(hex1).object();
-  const rgb2 = color(hex2).object();
+  const rgb1 = color(hex1.toLowerCase()).object();
+  const rgb2 = color(hex2.toLowerCase()).object();
 
   const r1 = rgb1.r;
   const g1 = rgb1.g;
