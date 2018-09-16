@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isInputPathValid should reject file with incorrect extension 1`] = `
+"Given file has unsupported format: \\".txt\\"
+Supported file extensions: .css, .sass, .scss, .less"
+`;
+
+exports[`isInputPathValid should reject path guiding to file that does not exist 1`] = `"Given file \\"./notExists.scss\\" does not exists."`;
