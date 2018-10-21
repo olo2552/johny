@@ -6,9 +6,7 @@ function readSassFile(sassStreamFilePath: string): Promise<string> {
     encoding: "utf-8",
     flag: "r"
   }).catch(err => {
-    // tslint:disable-next-line:no-console
-    console.log(err);
-    return err;
+    throw err;
   });
 }
 

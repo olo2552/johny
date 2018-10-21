@@ -31,6 +31,7 @@
   "homepage": "https://github.com/olo2552/johny#readme",
   "dependencies": {
     "color": "^3.0.0",
+    "gonzales-pe": "^4.2.3",
     "hex-rgb": "^3.0.0",
     "rgb-to-hex": "0.0.0"
   },
