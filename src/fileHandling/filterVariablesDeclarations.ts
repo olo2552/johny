@@ -1,13 +1,17 @@
-import { IParseTree } from "gonzales-pe";
+import { IParseTree, nodeType } from "gonzales-pe";
 
-function filterVariablesDeclarations(parseTree: IParseTree): IParseTree[] {
+function filterVariablesDeclarations(rootNode: IParseTree): IParseTree[] {
   const colors: IParseTree[] = [];
 
-  parseTree.traverseByType("declaration", (node) => {
+  rootNode.traverseByType("declaration", node => {
     colors.push(node);
   });
 
-  return colors;
+  return colors.filter(filteredDeclarationNode => {
+    const variableType: nodeType = "variable";
+    const property = filteredDeclarationNode.content[0];
+    return property.content[0].type === variableType;
+  });
 }
 
 export { filterVariablesDeclarations };
