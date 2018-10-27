@@ -1,12 +1,22 @@
 import { IParseTree } from "gonzales-pe";
+import { IVariableWithColorNode } from "../interfaces";
 
-function mapDeclarationsToVariablePairs({
-  content
-}: IParseTree): [IParseTree | string, IParseTree | string] {
-  const propertyObj = content[0];
-  const value = content[content.length - 1];
+function mapDeclarationsToVariablePairs(
+  declarations: IParseTree[]
+): IVariableWithColorNode[] {
+  declarations.forEach(declaration => {
+    declaration.traverseByTypes(
+      ["space", "propertyDelimiter"],
+      (_, index, parent) => {
+        parent.removeChild(index);
+      }
+    );
+  });
 
-  return [propertyObj, value];
+  return declarations.map(declaration => ({
+    color: declaration.content[1],
+    variable: declaration.content[0].content[0].content[0].content
+  }));
 }
 
 export { mapDeclarationsToVariablePairs };
