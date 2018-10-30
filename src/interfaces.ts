@@ -13,5 +13,5 @@ export interface IRgb {
 
 export interface IVariableWithColorNode {
   color: string;
-  variable: string | IParseTree;
+  variable: IParseTree;
 }

@@ -5,21 +5,19 @@ import { mapDeclarationsToVariablePairs } from "./fileHandling/mapDeclarationsTo
 import { readSassFile } from "./fileHandling/readSassFile";
 
 const sassVariablesFilePath =
-  process.argv[3] || "/home/olo2552/Desktop/_variables.scss";
+  process.argv[3] || "./__mocks__/_variables.scss";
 
 readSassFile(sassVariablesFilePath)
   .then(sass =>
     gonzalesPe.parse(sass, {
-      syntax: "sass",
+      syntax: "scss",
       tabSize: 2
     })
   )
   .then(filterVariablesDeclarations)
-  .then(parseTrees => parseTrees.map(parseTree => parseTree.toJson()))
-  .then(parseTrees => parseTrees.map(parseTree => JSON.parse(parseTree)))
-  .then(parseTrees => parseTrees[0])
   .then(mapDeclarationsToVariablePairs)
   .then(x =>
+    // tslint:disable-next-line:no-console
     console.log(
       inspect(x, {
         colors: true,
@@ -28,4 +26,5 @@ readSassFile(sassVariablesFilePath)
         maxArrayLength: 100
       })
     )
-  );
+  )
+  .catch(error => console.log("ERR", error));
