@@ -1,11 +1,10 @@
 import gonzalesPe from "gonzales-pe";
 import { inspect } from "util";
 import { filterVariablesDeclarations } from "./fileHandling/filterVariablesDeclarations";
-import { mapDeclarationsToVariablePairs } from "./fileHandling/mapDeclarationsToVariablePairs";
+import { mapDeclarationToVariablePair } from "./fileHandling/mapDeclarationToVariablePair";
 import { readSassFile } from "./fileHandling/readSassFile";
 
-const sassVariablesFilePath =
-  process.argv[3] || "./__mocks__/_variables.scss";
+const sassVariablesFilePath = process.argv[3] || "./__mocks__/_variables.scss";
 
 readSassFile(sassVariablesFilePath)
   .then(sass =>
@@ -15,7 +14,7 @@ readSassFile(sassVariablesFilePath)
     })
   )
   .then(filterVariablesDeclarations)
-  .then(mapDeclarationsToVariablePairs)
+  .then(nodes => nodes.map(mapDeclarationToVariablePair))
   .then(x =>
     // tslint:disable-next-line:no-console
     console.log(
@@ -27,4 +26,7 @@ readSassFile(sassVariablesFilePath)
       })
     )
   )
-  .catch(error => console.log("ERR", error));
+  .catch(error => {
+    // tslint:disable-next-line:no-console
+    console.log("ERR", error);
+  });
