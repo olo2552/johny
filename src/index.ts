@@ -3,8 +3,9 @@ import { inspect } from "util";
 import { filterVariablesDeclarations } from "./fileHandling/filterVariablesDeclarations";
 import { mapDeclarationToVariablePair } from "./fileHandling/mapDeclarationToVariablePair";
 import { readSassFile } from "./fileHandling/readSassFile";
+import { resolveNamedColorValues } from "./fileHandling/resolveNamedColorValues";
 
-const sassVariablesFilePath = process.argv[3] || "./__mocks__/_variables.scss";
+const sassVariablesFilePath = process.argv[3] || "./__mocks__/_namedColorVariables.scss";
 
 readSassFile(sassVariablesFilePath)
   .then(sass =>
@@ -15,6 +16,7 @@ readSassFile(sassVariablesFilePath)
   )
   .then(filterVariablesDeclarations)
   .then(nodes => nodes.map(mapDeclarationToVariablePair))
+  .then(nodes => nodes.map(resolveNamedColorValues))
   .then(x =>
     // tslint:disable-next-line:no-console
     console.log(
